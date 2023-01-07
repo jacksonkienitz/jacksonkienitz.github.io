@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cormorant, serif;
+}
+/* MENU BAR */
+
+ul {
+ list-style-type: none;
+}
+header {
+  background-color: white; /* #fffaf0; #e55c5c */
+  /* border-bottom: 1px dotted grey; */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  text-align: right;
+  font-size: 12px;
+  padding: 8px;
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  /* border-top: 1px dashed grey; */
+}
+footer p {
+  color: red;
+}
+
+hr {
+  width: 94%;
+  margin: auto;
+  border: 0 solid grey;
+}
+
+sup {
+  font-size: 12px;
+  color: red;
+}
+
+.menu-bar, .mobile-menu-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.menu-bar a, .mobile-menu-bar a {
+  color: red;
+  text-decoration: none;
+  font-family: Cormorant, serif;
+  font-size: 28px;
+  transition: color .25s;
+}
+
+.menu-bar a img:hover, .mobile-menu-bar a img:hover {
+  opacity: 0.75;
+  transition: opacity .25s;
+}
+
+.menu-bar a:hover, .mobile-menu-bar a:hover {
+  color: black;
+}
+
+
+@media (min-width: 1100px) {            /* to make resume better looking on mobile */
+  .mobile-menu-bar {
+    display: none;
+  }
+}
+@media (max-width: 1100px) {
+  .menu-bar {
+    display: none;
+  }
+}
+
+
+h1 {
+  margin-top: 10px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+@media (min-width: 700px) {
+  .mobile-resume-details-container {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .resume-details-container {
+    display: none;
+  }
+}
+
+.headshot-resume-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.headshot-resume {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 1600px;
+}
+
+.resume-container {
+  margin-left: 30px;
+}
+
+.resume-container a {
+}
+
+.resume-container p {
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.headshot-container {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+table {
+  font-size: 16px;
+}
+
+.acting-videos-container {
+  max-width: 512px;
+}
+
+.videos-container {
+  max-width: 512px;
+}
+
+/*
+.videos-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.videos-item {
+  display: inline-block;
+  width: 512px;
+  margin: 20px;
+} */
+
+details {
+  padding: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 24px;
+  font-family: Cormorant, serif;
+  /* border-bottom: 1px dashed red; */
+}
+
+details summary {
+  transition: color .1s;
+}
+
+details summary:hover {
+  color: red;
+  cursor: pointer;
+}
+
+main {
+  font-family: Cormorant, serif;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  min-height: 100vh;
+  background-image: linear-gradient(to right, white, #ffe1e1, white); /* #ffe1e1 #87cbff */
+}
+
+main a {
+  color: red;
+  transition: color .1s;
+}
+
+main a:hover {
+  color: black;
+}
+
+.content {
+  max-width: 1200px;
+  align-items: center;
+}
+
+/*.contact-page-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+} */
+
+.contact-list {
+  font-size: 24px;
+  width: 420px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+form {
+  position: relative;
+  max-width: 420px;
+  margin: 50px;
+  text-align: center;
+  background-color: transparent;
+}
+
+.form-input, .form-button {
+  font-family: Cormorant, serif;
+  color: black;
+  width: 420px;
+  max-width: 420px;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+.form-button:hover {
+  color: red;
+  border: 1px solid red;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.about-page-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about-content-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.about-content {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+.about-content p {
+  font-size: 24px;
+  text-align: justify;
+}
+.about-content h2 {
+  font-size: 40px;
+  margin-top: 25px;
+  color: red;
+}
+.about-content a {
+  color: red;
+  text-decoration: none;
+}
+.black {
+  color:black;
+}
+.videos-item h1 { /* for the music note at bottom of page */
+  margin-bottom: 25px;
+}
