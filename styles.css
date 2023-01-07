@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Cormorant, serif;
+  font-family: Cormorant, "Cormorant", serif;
 }
 /* MENU BAR */
 
@@ -56,7 +56,7 @@ sup {
 .menu-bar a, .mobile-menu-bar a {
   color: red;
   text-decoration: none;
-  font-family: Cormorant, serif;
+  font-family: Cormorant, "Cormorant", serif;
   font-size: 28px;
   transition: color .25s;
 }
@@ -162,7 +162,7 @@ details {
   padding-top: 15px;
   padding-bottom: 15px;
   font-size: 24px;
-  font-family: Cormorant, serif;
+  font-family: Cormorant,"Cormorant",  serif;
   /* border-bottom: 1px dashed red; */
 }
 
@@ -176,7 +176,7 @@ details summary:hover {
 }
 
 main {
-  font-family: Cormorant, serif;
+  font-family: Cormorant, "Cormorant", serif;
   display: flex;
   justify-content: center;
   padding: 30px;
@@ -220,7 +220,7 @@ form {
 }
 
 .form-input, .form-button {
-  font-family: Cormorant, serif;
+  font-family: Cormorant,"Cormorant", serif;
   color: black;
   width: 420px;
   max-width: 420px;
