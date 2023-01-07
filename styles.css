@@ -6,6 +6,11 @@
 }
 /* MENU BAR */
 
+@@font-face {
+  font-family: "Cormorant";
+  src: url("files/cormorant.ttf");
+}
+
 ul {
  list-style-type: none;
 }
