@@ -297,7 +297,7 @@ textarea {
 }
 
 .about-content-container {
-    margin-top: 25px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-around;
     flex-flow: row wrap;
