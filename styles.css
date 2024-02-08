@@ -29,7 +29,6 @@ header {
 footer {
   position: fixed;
   bottom: 0;
-  text-align: right;
   font-size: 12px;
   padding: 8px;
   width: 100%;
@@ -37,8 +36,27 @@ footer {
   background-color: white;
   /* border-top: 1px dashed grey; */
 }
+footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
 footer p {
+  text-align: right;
   color: red;
+}
+footer ul {
+  list-style-type: none;
+  text-decoration: none;
+}
+footer li {
+  display: inline-block;
+}
+
+footer a {
+  color: red;
+  text-decoration: none;
 }
 
 hr {
@@ -78,12 +96,12 @@ sup {
 }
 
 
-@media (min-width: 1100px) {            /* to make resume better looking on mobile */
+@media (min-width: 1000px) {            /* to make resume better looking on mobile */
   .mobile-menu-bar {
     display: none;
   }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
   .menu-bar {
     display: none;
   }
@@ -143,13 +161,18 @@ table {
   font-size: 16px;
 }
 
-.acting-videos-container {
-  max-width: 512px;
+@media (min-width: 700px) {
+  .acting-videos-container details {
+    max-width: 512px;
+  }
 }
 
-.videos-container {
-  max-width: 512px;
-}
+@media (max-width: 700px) {
+    .acting-videos-container details {
+      max-width: 100%;
+    }
+  }
+
 .stills-item {
   position: relative;
   text-align: right;
@@ -221,6 +244,10 @@ main a:hover {
 .content {
   max-width: 1200px;
   align-items: center;
+}
+
+.content details {
+  max-width: 700px;
 }
 
 /*.contact-page-container {
