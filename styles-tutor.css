@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cormorant", Cormorant, Garamond, serif;
+    background-color: #fffef9;
+}
+  /* MENU BAR */
+  
+ @font-face {
+    font-family: "Cormorant";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.gstatic.com/s/cormorant/v21/H4c2BXOCl9bbnla_nHIA47NMUjsNbCVrFhFTc7Nq7S-r0Yr5dA.woff2") format('woff2'),
+    url("files/Cormorant.ttf") format('truetype'),
+    url("files/Cormorant.woff") format('woff'),
+    url("files/Cormorant.svg") format('svg')
+    url("files/Cormorant.eot") format('embedded-opentype');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+tutor {
+    font-family: Cormorant, "Cormorant", serif;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    min-height: 100vh;
+  }
+
+h1 {
+    color: green;    
+    margin-top: 20px;
+    font-size: 50px;
+}
+
+  h2 {
+  color: green;
+  padding: 20px;
+  font-size: 35px;
+}
+
+
+h3 {
+  color: green;
+  margin-bottom:20px;
+  font-weight:lighter;
+  font-size: 12px;
+}
+
+hr {
+    width: 90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+a {
+    color: green;
+    transition: color .1s;
+}
+
+a:hover {
+    color: black;
+
+}
+
+.tutor-content, .mobile-tutor-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+  
+.tutor-content-item {
+    max-width: 340px;
+    padding:20px;
+}
+
+.mobile-tutor-content-item {
+    max-width: 340px;
+    padding:20px;
+}
+
+@media (min-width: 600px) {
+    .mobile-tutor-content, .mobile-tutor-header {
+      display: none;
+    }
+  }
+  @media (max-width: 600px) {
+    .tutor-content, .tutor-header {
+      display: none;
+    }
+  }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    font-size: 12px;
+    padding: 8px;
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    /* border-top: 1px dashed grey; */
+  }
+
+  footer p {
+    text-align: right;
+    color: green;
+  }
