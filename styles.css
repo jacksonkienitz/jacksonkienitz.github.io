@@ -89,6 +89,7 @@ sup {
   transition: color .25s;
 }
 
+
 .menu-bar a img:hover, .mobile-menu-bar a img:hover {
   opacity: 0.75;
   transition: opacity .25s;
