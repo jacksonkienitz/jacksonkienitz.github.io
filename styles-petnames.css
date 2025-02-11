@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica", Helvetica, sans-serif;
+    background-color: #fffef9;
+    cursor: crosshair;
+}
+  /* MENU BAR */
+  
+ @font-face {
+    font-family: "Helvetica", Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+
+tutor {
+    font-family: "Helvetica", Helvetica, sans-serif,;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    min-height: 100vh;
+  }
+
+h1 {
+    color: black;    
+    margin-top: 20px;
+    font-size: 50px;
+}
+
+  h2 {
+  color: green;
+  padding: 20px;
+  font-size: 24px;
+}
+
+
+h3 {
+  color: lightcoral;
+  margin-bottom:20px;
+  font-weight:lighter;
+  font-size: 12px;
+}
+
+hr {
+    width: 90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+a {
+    color: lightcoral;
+    transition: color .1s;
+    cursor: pointer;
+}
+
+a:hover {
+    color: black;
+
+}
+
+.tutor-content, .mobile-tutor-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+  
+.tutor-content-item {
+    max-width: 400px;
+    padding:20px;
+}
+
+.mobile-tutor-content-item {
+    max-width: 400px;
+    padding:20px;
+}
+
+@media (min-width: 600px) {
+    .mobile-tutor-content, .mobile-tutor-header {
+      display: none;
+    }
+  }
+  @media (max-width: 600px) {
+    .tutor-content, .tutor-header {
+      display: none;
+    }
+  }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    font-size: 12px;
+    padding: 8px;
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    /* border-top: 1px dashed grey; */
+  }
+
+  footer p {
+    text-align: right;
+    color: lightcoral;
+  }
