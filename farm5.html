@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank at Farm</title>
+    <style>
+        /* --- General Reset & Minimal Aesthetic --- */
+        :root {
+            --header-height: 100px; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            /* Font setting for consistency */
+            font-family: Tiempos, Cormorant, Serif; 
+            background-color: white; 
+            /* background-color: rgb(255, 250, 230); */
+            color: black; 
+            line-height: 1.5;
+        }
+
+        /* --- Sticky Title Bar --- */
+        header {
+            position: fixed;
+            font-family: Garnett;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: white; 
+
+            /*background-color: rgb(255, 250, 230);*/
+            display: flex;
+            align-items: center;
+            /* Centering the title in the fixed bar */
+            justify-content: center; 
+            z-index: 100;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 400; 
+            letter-spacing: 0.5px;
+        }
+        
+        /* --- Centering Wrapper (1000px) --- */
+        .page-wrapper {
+            max-width: 1000px; 
+            margin: 0 auto;
+        }
+
+        /* --- Main Content Container --- */
+        main {
+            padding-top: var(--header-height); 
+            /* No horizontal padding here */
+            padding-left: 0; 
+            padding-right: 0;
+        }
+
+        /* --- Split Section: Side-by-Side Divs --- */
+        .split-container {
+            display: flex;
+            gap: 10px; 
+            width: 100%;
+            height: 50vh;
+        }
+
+        /* --- The Interactive Split Divs (Links) --- */
+        .split-link {
+            flex: 1;
+            position: relative;
+            text-decoration: none;
+            color: white;
+            overflow: hidden;
+        }
+
+        .split-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+            filter: brightness(0.8);
+            transition: filter 0.2s ease;
+        }
+        
+        .split-link:hover img {
+            filter: brightness(.9);
+        }
+
+        .overlay-text {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            font-weight: 200; 
+            pointer-events: none;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4); 
+        }
+
+        /* --- Bottom Content Sections (Anchors) --- */
+        /* Sections are now direct children of the 1000px wrapper */
+        section {
+            margin-top: 40px;
+            margin-bottom: 80px;
+            /* NEW: Add padding to prevent text from touching the 1000px edge */
+            padding: 0 10px; 
+            scroll-margin-top: calc(var(--header-height) + 20px); 
+        }
+
+        section h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 400; 
+            letter-spacing: 0.5px;
+            font-size: 1.5rem;
+            font-weight: 400;
+            padding-bottom: 5px; 
+            /* REMOVED: border-bottom: 1px solid #eee; */
+        }
+        
+        section p {
+            color: #090025;
+        }
+
+        /* --- Mobile Response: Stacked Layout --- */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+                height: auto; 
+            }
+
+            .split-link {
+                height: 40vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="farm/vane.jpg" style="max-width:50px;"><h1>The Actors' Barn</h1>
+    </header>
+
+    <div class="page-wrapper">
+        
+        <main>
+            <div class="split-container">
+                
+                <a href="#about-section" class="split-link">
+                    <img src="farm/farm1.gif" alt="About GIF">
+                    <span class="overlay-text"></span>
+                </a>
+
+                <a href="#interest-section" class="split-link">
+                    <img src="farm/farm2.gif" alt="Interest GIF">
+                    <span class="overlay-text"></span>
+                </a>
+
+            </div>
+
+            <section id="about-section">
+                <h2>About</h2>
+                <p>This is the content for the about section. The text area is now the same maximum width (1000px) as the images above it, maintaining perfect alignment.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <center><img src="farm/bio1.jpeg" style="max-width:200px;"> 
+                <img src="farm/bio2.jpeg" style="max-width:200px;"> </center>
+            </section>
+
+            <section id="interest-section">
+                <h2>Interest</h2>
+                <p>This is the content for the interest section.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

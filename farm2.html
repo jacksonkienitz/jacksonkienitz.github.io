@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Blank at Farm — Minimal Layout</title>
+<style>
+  :root{
+    --header-height: 64px;   /* adjust as needed */
+    --polaroid-border: 12px;
+  }
+
+  /* Reset-ish */
+  * { box-sizing: border-box; }
+  html,body { height:100%; margin:0; background:#fff; color:#111; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+  /* Smooth scrolling for in-page anchors */
+  html { scroll-behavior: smooth; }
+
+  /* Top title bar — Polaroid look: white border + subtle shadow, sticky to top */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    padding: 12px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height: var(--header-height);
+    gap: 12px;
+  }
+  header h1 {
+    margin:0;
+    font-size: 1.15rem;
+    letter-spacing: 0.6px;
+    font-weight:600;
+  }
+
+  /* Main container for the two tiles */
+  .tile-row {
+    display:flex;
+    flex-wrap:nowrap;
+    width:100%;
+    /* keep the tiles full width while each tile has 5px margin */
+  }
+
+  /* Each tile (clickable) */
+  .tile {
+    margin: 5px;                /* <-- exactly 5px margins as requested */
+    flex: 1 1 0;                /* expand to fill available width equally */
+    min-width: 200px;          /* prevents collapsing on narrow widths */
+    height: 48vh;              /* adjust to taste; gives a tall visual */
+    background: #fff;
+    border: var(--polaroid-border) solid #fff; /* white polaroid border */
+    box-shadow: 0 10px 24px rgba(0,0,0,0.09);
+    overflow: hidden;
+    display:block;             /* clickable anchor wrapping the tile */
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    border-radius: 2px;
+  }
+
+  /* The GIF itself fills the tile */
+  .tile img {
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit: cover;
+    vertical-align: middle;
+  }
+
+  /* Overlay caption — centered */
+  .tile .label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 14px;
+    background: rgba(255,255,255,0.92); /* nearly white, to keep polaroid feel */
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight:600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  }
+
+  /* Focus outline for accessibility */
+  .tile:focus {
+    outline: 3px solid rgba(0,0,0,0.08);
+    outline-offset: 2px;
+  }
+
+  /* Content area below the top tiles */
+  main {
+    max-width: 980px;
+    margin: 22px auto;
+    padding: 0 12px;
+  }
+
+  /* About / Interest sections — Polaroid-like card */
+  section.card {
+    background:#fff;
+    border: var(--polaroid-border) solid #fff;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.07);
+    padding: 18px;
+    margin: 12px 0;
+    border-radius: 2px;
+  }
+
+  section.card h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.05rem;
+  }
+
+  /* ensure the anchor target isn't hidden behind the sticky header */
+  .anchor-target {
+    scroll-margin-top: calc(var(--header-height) + 10px);
+  }
+
+  /* Responsive: stack the tiles on narrow screens */
+  @media (max-width: 700px) {
+    .tile-row {
+      flex-direction: column;
+    }
+    .tile {
+      width: calc(100% - 10px); /* because left+right margins = 10px */
+      height: 44vh; /* slightly shorter on phone */
+    }
+    header {
+      padding: 10px 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <h1>Blank at Farm</h1>
+  <!-- minimal nav — optional -->
+  <nav aria-label="Main">
+    <!-- simple text to the right or leave empty -->
+  </nav>
+</header>
+
+<!-- Tiles row: wrap each tile in an anchor so whole tile is clickable -->
+<div class="tile-row" role="navigation" aria-label="Quick links">
+  <a class="tile" href="#about" aria-label="About — scroll to About section">
+    <!-- Replace the src with your GIF path. Keep same aspect via object-fit -->
+    <img src="path/to/left.gif" alt="About GIF placeholder" />
+    <div class="label">About</div>
+  </a>
+
+  <a class="tile" href="#interest" aria-label="Interest — scroll to Interest section">
+    <img src="path/to/right.gif" alt="Interest GIF placeholder" />
+    <div class="label">Interest</div>
+  </a>
+</div>
+
+<main>
+  <!-- "About" anchored section -->
+  <section id="about" class="card anchor-target">
+    <h2>About</h2>
+    <p>
+      This is the "About" area. The header is sticky; clicking the About tile above will scroll here.
+      The anchor uses <code>scroll-margin-top</code> so the heading is not hidden under the sticky header.
+    </p>
+    <p>
+      Replace this text with your real content. Keep it minimal: a few paragraphs or contact info.
+    </p>
+  </section>
+
+  <!-- "Interest" anchored section -->
+  <section id="interest" class="card anchor-target">
+    <h2>Interest</h2>
+    <p>
+      This is the "Interest" area. Clicking the right tile will bring the user here.
+    </p>
+    <p>
+      Add more content, images, or other links as needed.
+    </p>
+  </section>
+
+  <!-- Optional footer or extra about -->
+  <section class="card">
+    <h2>More</h2>
+    <p>Extra footer-like content or longer About copy can go here.</p>
+  </section>
+</main>
+
+</body>
+</html>

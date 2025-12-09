@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank at Farm</title>
+    <style>
+        /* --- General Reset & Minimal Aesthetic --- */
+        :root {
+            /* Defining the header height variable to handle scrolling offsets later */
+            --header-height: 70px; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: white;
+            color: #333;
+        }
+
+        /* --- Sticky Title Bar --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 100;
+            /* A very subtle border/shadow to give it the "Polaroid" separation from content beneath it */
+            border-bottom: 4px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        /* --- Main Container for Split View --- */
+        /* Adds padding to push content down past the fixed header */
+        main {
+            padding-top: calc(var(--header-height) + 10px);
+            padding-bottom: 20px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .split-container {
+            display: flex;
+            /* This creates the 5px space *between* the items */
+            gap: 10px; 
+            width: 100%;
+            height: 60vh; /* Adjust height as needed */
+        }
+
+        /* --- The Interactive Split Divs --- */
+        .split-link {
+            /* flex: 1 makes them expand equally to fill width */
+            flex: 1;
+            position: relative;
+            text-decoration: none;
+            color: white;
+            overflow: hidden;
+            
+            /* The Polaroid Look: Thick white border with a very subtle shadow to define it against the white background */
+            border: 8px solid white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Subtle hover effect */
+        .split-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Styling the GIF/Image */
+        .split-link img {
+            width: 100%;
+            height: 100%;
+            /* ensures the image covers the area without stretching */
+            object-fit: cover; 
+            display: block;
+            /* Slight darkening filter so white text pops */
+            filter: brightness(0.8); 
+        }
+
+        /* Styling the Overlaid Text */
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            pointer-events: none; /* Ensures clicks go through to the link, not the text span */
+        }
+
+        /* --- Bottom Content Sections (Anchors) --- */
+        .content-area {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            /* Crucial: This ensures that when scrolling to the section, 
+               the fixed header doesn't cover the top of the content. */
+            scroll-margin-top: calc(var(--header-height) + 20px);
+        }
+
+        section h2 {
+            margin-top: 0;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        section p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* --- Mobile Response (Based on Sketch Right Side) --- */
+        @media (max-width: 768px) {
+            .split-container {
+                /* Stack them vertically */
+                flex-direction: column;
+                /* Let them be taller on mobile so they don't feel cramped */
+                height: 80vh; 
+            }
+            
+            .header h1 {
+                font-size: 1.2rem;
+            }
+
+            .overlay-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Blank at Farm</h1>
+    </header>
+
+    <main>
+        <div class="split-container">
+            
+            <a href="#about-section" class="split-link">
+                <img src="https://placehold.co/600x800/222/fff.gif?text=GIF+Here" alt="About GIF">
+                <span class="overlay-text">About</span>
+            </a>
+
+            <a href="#interest-section" class="split-link">
+                <img src="https://placehold.co/600x800/444/fff.gif?text=GIF+Here" alt="Interest GIF">
+                <span class="overlay-text">Interest</span>
+            </a>
+
+        </div>
+
+        <div class="content-area">
+            
+            <section id="about-section">
+                <h2>About</h2>
+                <p>This is the about section. When you click the top left image, the page smoothly scrolls down to here. The layout is kept minimal with ample whitespace, mimicing the feel of a gallery wall or polaroid collection.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </section>
+
+            <section id="interest-section">
+                <h2>Interest</h2>
+                <p>This is the interest section. Clicking the top right image brings you here.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>
