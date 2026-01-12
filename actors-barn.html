@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 0;
+            padding: 0;
+            font-family: "Baskerville", "Cormorant", serif;
+            /*font-family: Helvetica Light, "Helvetica Light", "Helvetica Neue Light", sans-serif;*/
+            background-color: rgb(255, 242, 240);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            text-align: center;
+            padding: 10px 0;
+            background-color: inherit;
+        }
+
+        .logo {
+            max-width: 360px;
+            width: 100%;
+        }
+
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .landing-image {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .text-section {
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        p {
+            color: black;
+            font-weight: 100;
+            font-size: 1.2em;
+        }
+
+        h1 {
+            font-family: "Neutral Faces", Neutral Faces, Helvetic, Arial, sans-serif;
+            color: teal;
+            font-style: light;
+            letter-spacing: -1px;
+            font-weight: 100;
+            font-size: 1.5em;
+        }
+
+        a {
+            color: teal;
+            font-style: italic;
+            font-weight: 100;
+            font-size: 1.2em;
+        }
+
+        a:hover {
+            color: rgb(227, 107, 67);
+            transition: .3s;
+        }
+
+        h2 {
+            font-family: Baskerville; "Neutral Faces", Neutral Faces, Helvetic, Arial, sans-serif;
+            font-size: 1.4em;
+            text-align: center;
+            font-style: italic;
+            font-weight: 100;
+            color: black;
+        }
+
+        .staff-columns {
+            display: flex;
+        }
+
+
+        .staff-member {
+            flex: 1;
+            text-align: justify;
+            padding: 20px;
+        }
+
+        .staff-image {
+            width: 100%;
+        }
+
+        .footer-image-container {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 80px;
+        }
+
+        .footer-image {
+            width: 10%;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            font-size: 12px;
+            padding: 8px;
+            width: 96%;
+            height: 30px;
+            background-color: inherit;
+        }
+
+         footer p {
+            text-align: right;
+            font-style: italic;
+            color: teal;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="farm/actors-barn-logo.png" alt="Logo" class="logo">
+    </header>
+
+    <div class="content">
+        <img src="farm/landing.gif" alt="Landing Image" class="landing-image">
+
+        <div class="text-section">
+            <h1>ABOUT</h1>
+            <p>Week-long theatre camp for kids, set in a converted 19th-century barnhouse. 
+                Students will explore physical theatre, maskmaking, and even DIY filmmaking techniques.
+            </p>
+        </div>
+
+        <div class="text-section">
+            <h1>INTEREST FORM</h1>
+            <p>Interested in enrolling a student, or want to receive email updates? <br><br>
+                <center><a href="TK.html">→ Click the following link to access an interest form,
+                    where you can learn more <br> about camp options and reserve an early-bird spot for class registration . 
+                </a></center>
+            </p>
+        </div>
+
+        <div class="staff-section">
+            <h1>STAFF</h1>
+            <div class="staff-columns">
+                <div class="staff-member">
+                    <img src="farm/karin-photo.jpeg" alt="Staff Member 1" class="staff-image">
+                    <h2>Karin Hoelzl (Founder)</h2>
+                    <p>Most of my childhood was spent doing theater in my grandparents’ barn in Middleburg, Virginia. I recently finished my MFA in Acting in Classical and Contemporary Text at The Royal Conservatoire of Scotland, and before that I received my BFA in Acting from Emerson College. As a performer and audience member, I’m drawn to physical theater, devising processes, experimental retellings and new writing. Some of the things I’m curious about in my work right now include: what people do all day, girlhood and swans. In addition to acting, I write, produce, and teach after school theater in Brooklyn. </p>
+                </div>
+                <div class="staff-member">
+                    <img src="farm/jackson-photo.jpeg" alt="Staff Member 2" class="staff-image">
+                    <h2>Jackson Kienitz (Teacher)</h2>
+                    <p>
+                        Some of the questions that guide his work: where do tragedy and comedy meet? Where do they stray? How can sloppy communication amount to something that’s like sorta kinda precise? Which knob controls love? How should we choose what to care about? What’s a healthy amount of delusion? Why are we laughing? Ha! Why do they think that? Why not?
+                        
+                        Recent work includes playing leading roles Danny in Sinkholes, a surrealist apocalypse film directed by Graham Cooper, and Freddy in Humbly Yours, Hassock, an indie comedy directed by Tanna Herr. A recipient of Ridgewood’s Woodward Residency, he is currently developing his plays Petnames and HONEYDEW NO.2.
+                        
+                        He has an M.F.A. in Acting from the Royal Conservatoire of Scotland, and a B.A. in Drama and Creative Writing from Columbia University.
+                        </p>
+                </div>
+            </div>
+        </div>
+        <div class=footer-image-container>
+            <center><a href="TK.html">→ Interested? Click here for early registration! 
+            </a></center>
+            <br><br><br>
+            <img src="farm/footer-image.png" alt="Footer Image" class="footer-image">
+        </div>
+    </div>
+    <footer>
+        <p>© Hoelzl & Kienitz</p>
+    </footer>
+</body>
+</html>
